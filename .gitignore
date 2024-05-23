@@ -1,0 +1,5 @@
+tempCodeRunerFile.cpp
+*.exe
+*.out
+build
+.vscode
