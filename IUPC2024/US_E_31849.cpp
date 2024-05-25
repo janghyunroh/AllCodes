@@ -5,6 +5,7 @@ using namespace std;
 
 vector<pair<int, pair<int, int>>> rooms;
 bool convs[1001][1001] = {false, };
+bool visited[1001][1001] = {false, };
 int dx[4] = {0, 1, 0, -1};
 int dy[4] = {1, 0, -1, 0};
 int N, M, R, C;
@@ -27,6 +28,10 @@ int main() {
     
     //BFS
     priority_queue<pair<int, pair<int, pair<int, int>>>> pq;
+    //pq 쓰면 메모리 초과남
+    //그냥 queue 쓰고 visited 배열 쓰기
+    //근데 각 방마다 cost가 다른데? 
+    //q ( 현재까지의 편세권 점수, x, y )
     
     for(auto room : rooms) {
         pq.emplace(0, room);
